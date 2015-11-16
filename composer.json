@@ -1,6 +1,6 @@
 {
-    "name": "dividebv/postnl",
-    "description": "Library to connect to PostNL's SOAP service called CIF",
+    "name": "emielmolenaar/postnl",
+    "description": "Library to connect to PostNL's SOAP service called CIF, while maintaining PHP 5.3 compat.",
     "license": "GPL-2",
     "authors": [
         {
@@ -8,7 +8,9 @@
             "email": "a.ross@amdev.eu"
         }
     ],
-    "require": {},
+    "require": {
+        "php" : ">=5.3"
+    },
     "require-dev": {
         "squizlabs/php_codesniffer": "2.*",
         "apigen/apigen": "^4.1"
