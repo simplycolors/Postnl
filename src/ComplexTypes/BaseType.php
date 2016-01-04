@@ -10,7 +10,7 @@ abstract class BaseType
      */
     public static function create()
     {
-        $reflection = new ReflectionClass(get_called_class());
-        return $reflection->newInstanceWithoutConstructor();
+        $className = get_called_class();
+        return new $className();
     }
 }
