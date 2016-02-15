@@ -20,8 +20,8 @@ class SecurityHeader extends SoapHeader
         $username = new SoapVar($username, XSD_STRING, null, null, 'Username', self::XMLNS);
         $password = new SoapVar(sha1($password), XSD_STRING, null, null, 'Password', self::XMLNS);
 
-        $usernameToken = new SoapVar([$username, $password], SOAP_ENC_OBJECT, null, null, 'UsernameToken', self::XMLNS);
-        $security = new SoapVar([$usernameToken], SOAP_ENC_OBJECT, null, null, 'Security', self::XMLNS);
+        $usernameToken = new SoapVar(array($username, $password), SOAP_ENC_OBJECT, null, null, 'UsernameToken', self::XMLNS);
+        $security = new SoapVar(array($usernameToken), SOAP_ENC_OBJECT, null, null, 'Security', self::XMLNS);
 
         parent::__construct(self::XMLNS, 'Security', $security);
     }

@@ -24,7 +24,7 @@ abstract class BaseClient extends SoapClient
      *
      * @see self::getClassmap()
      */
-    protected $classes = [];
+    protected $classes = array();
 
     /**
      * @param ComplexTypes\SecurityHeader $SecurityHeader
@@ -42,7 +42,7 @@ abstract class BaseClient extends SoapClient
             $wsdl = $sandbox ? static::SANDBOX_WSDL : static::PRODUCTION_WSDL;
         }
 
-        parent::__construct($wsdl, ['classmap' => $this->getClassmap(), 'trace' => true]);
+        parent::__construct($wsdl, array('classmap' => $this->getClassmap(), 'trace' => true));
 
         $this->__setSoapHeaders($SecurityHeader);
     }
@@ -53,7 +53,7 @@ abstract class BaseClient extends SoapClient
      */
     protected function getClassmap()
     {
-        $classmap = [];
+        $classmap = array();
 
         foreach ($this->classes as $class) {
             $classmap[$class] = "DivideBV\\Postnl\\ComplexTypes\\{$class}";
